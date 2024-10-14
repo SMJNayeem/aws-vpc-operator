@@ -1,0 +1,9 @@
+apiVersion: infrastructure.example.com/v1
+kind: AWSVPC
+metadata:
+  name: awsvpc-sample
+spec:
+  region: "asia-southeast-1"
+  cidrBlock: "10.0.0.0/16"
+  name: "sample-vpc"
+  subnetCIDR: "10.0.1.0/24"

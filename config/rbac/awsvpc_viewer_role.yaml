@@ -1,0 +1,23 @@
+# permissions for end users to view awsvpcs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: aws-vpc-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: awsvpc-viewer-role
+rules:
+- apiGroups:
+  - infrastructure.example.com
+  resources:
+  - awsvpcs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - infrastructure.example.com
+  resources:
+  - awsvpcs/status
+  verbs:
+  - get
